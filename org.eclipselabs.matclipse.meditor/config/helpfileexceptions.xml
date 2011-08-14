@@ -1,0 +1,33 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<!DOCTYPE helpexceptions SYSTEM "helpfileexceptions.dtd">
+<helpexceptions>
+  <exception word="+" >techdoc/matlab_prog/ch12_nd9.html</exception>
+  <exception word=".+" >techdoc/matlab_prog/ch12_nd9.html</exception>
+  <exception word="-" >techdoc/matlab_prog/ch12_nd9.html</exception>
+  <exception word=".-" >techdoc/matlab_prog/ch12_nd9.html</exception>
+  <exception word="*" >techdoc/matlab_prog/ch12_nd9.html</exception>
+  <exception word=".*" >techdoc/matlab_prog/ch12_nd9.html</exception>
+  <exception word="/" >techdoc/matlab_prog/ch12_nd9.html</exception>
+  <exception word="./" >techdoc/matlab_prog/ch12_nd9.html</exception>
+  <exception word="\" >techdoc/matlab_prog/ch12_nd9.html</exception>
+  <exception word=".\" >techdoc/matlab_prog/ch12_nd9.html</exception>
+  <exception word="^" >techdoc/matlab_prog/ch12_nd9.html</exception>
+  <exception word=".^" >techdoc/matlab_prog/ch12_nd9.html</exception>
+  <exception word="'" >techdoc/matlab_prog/ch12_nd9.html</exception>
+  <exception word=".'" >techdoc/matlab_prog/ch12_nd9.html</exception>
+
+  <exception word="&lt;" >techdoc/matlab_prog/ch12_n10.html</exception>
+  <exception word="&lt;=" >techdoc/matlab_prog/ch12_n10.html</exception>
+  <exception word="&gt;" >techdoc/matlab_prog/ch12_n10.html</exception>
+  <exception word="&gt;=" >techdoc/matlab_prog/ch12_n10.html</exception>
+  <exception word="=" >techdoc/matlab_prog/ch12_n10.html</exception>
+  <exception word="~=" >techdoc/matlab_prog/ch12_n10.html</exception>
+
+  <exception word="&amp;" >techdoc/matlab_prog/ch12_n11.html</exception>
+  <exception word="|" >techdoc/matlab_prog/ch12_n11.html</exception>
+  <exception word="~" >techdoc/matlab_prog/ch12_n11.html</exception>
+  <exception word="&amp;&amp;" >techdoc/matlab_prog/ch12_n11.html</exception>
+  <exception word="||" >techdoc/matlab_prog/ch12_n11.html</exception>
+
+  <exception word=":" >techdoc/ref/colon.html</exception>
+</helpexceptions>

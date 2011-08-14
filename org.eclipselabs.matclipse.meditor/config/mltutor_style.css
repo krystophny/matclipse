@@ -1,0 +1,154 @@
+body {
+  background-color: #FFFFFF;
+}
+
+p {}
+
+.code_text{
+  font-family: 'Monospace', 'Courier', 'Courier new', monospace;
+  background:  #EEEEEE;
+  padding:     10px;
+}
+
+.markup_text{
+  font-family:   serif;
+  color:         black;
+}
+
+.matlab_comment{
+  color: #C0C0C0;
+}
+
+.matlab_string{
+  color: #00AA00;
+}
+
+.matlab_keyword{
+  color: #0000FF;
+}
+
+.matlab_function{
+  color: #00C8FF;
+}
+
+.toolbox_function{
+  color: #00C896;
+}
+
+.matlab_number{
+  color: #800000;
+}
+
+.text{
+  font-family:   serif;
+  color:         black;
+}
+
+.truetype{
+  font-family:   'Monospace', 'Courier', 'Courier new', monospace;
+}
+
+.cequation{
+  text-align:    center;
+}
+
+h1{
+  font-family:   'Arial', sans-serif;
+  font-size:     x-large;
+  font-weight:   bold;
+  margin-top:    0.6em;
+  margin-bottom: 0.2em;
+  color:         #990000; 
+}
+
+h2{
+  font-family:   'Arial', sans-serif;
+  font-size:     large;
+  font-weight:   bold;
+  margin-top:    0.6em;
+  margin-bottom: 0.2em;
+  color:         #990000; 
+}
+
+h3{
+  font-family:   'Arial', sans-serif;
+  font-size:     medium;
+  font-weight:   bold;
+  margin-top:    0.6em;
+  margin-bottom: 0.2em;
+  color:         #990000; 
+}
+
+img{
+  vertical-align:middle;
+}
+
+table{}
+
+.code_table{
+  font-family:    'Monospace', 'Courier', 'Courier new', monospace;
+  background:     #EEEEEE;
+  padding:        0.5em;
+  table-layout:   auto;
+  border-spacing: 0px;
+  width:          100%;
+  min-width:      50em;
+}
+
+.matrix{
+  font-family:    'Monospace', 'Courier', 'Courier new', monospace;
+  background:     #FFFFDD;
+  color:          #0000DD;
+  padding:        0.5em;
+  table-layout:   auto;
+  border-spacing: 0px;
+  width:          100%;
+  min-width:      50em;
+}
+
+td {}
+
+.linenumber_cell{
+  text-align:     right;
+  vertical-align: middle;
+  font-size:      90%;
+  padding-right:  0.5em; 
+  color:          #BBBBBB; 
+  border-right:   1px solid #BBBBBB;
+  width:          2em;
+}
+
+.code_cell{
+  text-align:     left;
+  vertical-align: middle;
+  padding-left:   0.5em; 
+  white-space:    nowrap;
+}
+
+.matrix_cell, .matrix_dot_cell{
+  text-align:     right;
+  padding:        0px;
+  padding-left:   1em; 
+  border-spacing: 0px;
+  margin:         0px;
+  white-space:    nowrap;
+}
+
+.matrix_dot_cell{
+  text-align:     center;
+}
+
+.filler_cell{
+  width:          100%;
+}
+
+ul, ol{
+  font-family:   serif;
+  color:         black;
+}
+
+pre{
+  font-family:    'Monospace', 'Courier', 'Courier new', monospace;
+  padding:        0px;
+  margin:         0px;
+}

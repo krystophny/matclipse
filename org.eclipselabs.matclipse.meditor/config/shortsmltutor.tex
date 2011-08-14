@@ -1,0 +1,74 @@
+% MLTutor export specials
+\usepackage{fancyvrb}
+\usepackage{calc}
+\usepackage{array}
+\usepackage{colortbl}
+  
+  \definecolor{commentcolor}{gray}{0.753}
+  \definecolor{stringcolor}{rgb}{0,0.667,0}
+  \definecolor{keywordcolor}{rgb}{0,0,1}
+  \definecolor{functioncolor}{rgb}{0,0.784,1}
+  \definecolor{toolboxcolor}{rgb}{0,0.784,0.588}
+  \definecolor{numbercolor}{rgb}{0.5,0,0}
+  
+  \newcommand{\matlabwhitespace}[1]{\verb°#1°}
+  \newcommand{\matlabcode}[1]{\verb°#1°}
+  \newcommand{\matlabcomment}[1]{\textcolor{commentcolor}{\verb°#1°}}
+  \newcommand{\matlabstring}[1]{\textcolor{stringcolor}{\verb°#1°}}
+  \newcommand{\matlabkeyword}[1]{\textcolor{keywordcolor}{\verb°#1°}}
+  \newcommand{\matlabfunction}[1]{\textcolor{functioncolor}{\verb°#1°}}
+  \newcommand{\toolboxfunction}[1]{\textcolor{toolboxcolor}{\verb°#1°}}
+  \newcommand{\matlaboperator}[1]{\textcolor{keywordcolor}{\verb°#1°}}
+  \newcommand{\matlabnumber}[1]{\textcolor{numbercolor}{\verb°#1°}}
+
+  \definecolor{sectioncolor}{rgb}{0.6,0,0}
+  \newcommand{\mlsection}[1]{\section*{\textcolor{sectioncolor}{#1}}}
+  \newcommand{\mlsubsection}[1]{\subsection*{\textcolor{sectioncolor}{#1}}}
+  \newcommand{\mlsubsubsection}[1]{\subsubsection*{\textcolor{sectioncolor}{#1}}}
+  
+  \newcommand{\linenumber}[1]{\textcolor{commentcolor}{\hfill \footnotesize #1}}
+    
+  \arrayrulecolor{commentcolor}
+  
+  \definecolor{codeboxcolor}{gray}{0.933}
+  \definecolor{outputcolor}{rgb}{1,1,0.867}
+  \makeatletter 
+  \newenvironment{codebox}[1][\linewidth]
+  {
+    \setlength{\fboxsep}{3mm}
+    \setlength{\@tempdima}{#1-2\fboxsep-2\fboxrule-2pt}
+    \begin{lrbox}{\@tempboxa}\begin{minipage}{\@tempdima}
+  }
+  {
+    \end{minipage}\end{lrbox}%
+    \colorbox{codeboxcolor}{\usebox{\@tempboxa}}
+  }  
+  \makeatother 
+
+  \makeatletter 
+  \newenvironment{lcodebox}[1][\linewidth]
+  {
+    \setlength{\fboxsep}{3mm}
+    \setlength{\@tempdima}{#1-2\fboxsep-2\fboxrule-3.8pt}
+    \begin{lrbox}{\@tempboxa}\begin{minipage}{\@tempdima}
+    \begin{tabular}{m{1.5em}|l}
+  }
+  {
+    \end{tabular}
+    \end{minipage}\end{lrbox}%
+    \colorbox{codeboxcolor}{\usebox{\@tempboxa}}
+  }  
+  \makeatother 
+  
+  \makeatletter 
+  \newenvironment{outputbox}[1][\linewidth]
+  {
+    \setlength{\fboxsep}{3mm}
+    \setlength{\@tempdima}{#1-2\fboxsep-2\fboxrule-3.8pt}
+    \begin{lrbox}{\@tempboxa}\begin{minipage}{\@tempdima}
+  }
+  {
+    \end{minipage}\end{lrbox}%
+    \colorbox{outputcolor}{\usebox{\@tempboxa}}
+  }  
+  \makeatother 

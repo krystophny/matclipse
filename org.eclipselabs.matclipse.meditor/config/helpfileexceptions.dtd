@@ -1,0 +1,5 @@
+<!ELEMENT helpexceptions (exception)*>
+<!ELEMENT exception (#PCDATA)>
+<!ATTLIST exception
+   word CDATA #REQUIRED
+>

@@ -1,0 +1,55 @@
+<html>
+<head>
+   <title>Meditor</title>
+</head>
+<body>
+   
+    <h1>Using Meditor</h1>
+    <p>Meditor extends a standard Eclipse Source Editor, which provides many functionalities. This help section describes the features brought in by Meditor.</p>
+    
+    <h2>Matlab help access</h2>
+    <p>If the cursor is positioned at a Matlab function, the (HTML) Matlab help page for this function can be shown by:</p>
+    <ul>
+        <li>pressing <strong>F1</strong></li>
+        <li>clicking <strong>Help &gt; Matlab help</strong></li>
+    </ul> 
+    
+    <h2>Indentation</h2>
+    <p>When beginning a new line, Meditor automatically sets the correct indentation for the new line and, if necesary, corrects the precedent line's indentation.</p>    
+    <p>It's also possible to force the correct indentation of one or more lines manually:</p>
+    <ul>
+        <li>The simplest way to do this is to press <strong>tab</strong> somewhere before the first non whitespace character in the line to modify</li>
+        <li>Pressing <strong>Ctrl-I</strong> indents all selected lines (or the line the cursor is positioned in) correctly</li>
+        <li>The same effect has the command <strong>Edit &gt; Correct indentation</strong></li>
+        <li>or in the context menu <strong>Source &gt; Correct indentation</strong></li>
+    </ul> 
+    <p>To indent the whole document one can:</p>
+    <ul>
+        <li>Press <strong>Ctrl-Shift-I</strong></li>
+        <li>Click <strong>Edit &gt; Indent document</strong></li>
+        <li>or in the context menu <strong>Source &gt; Indent document</strong></li>
+    </ul>
+    
+    <h2>(Un-)Commenting</h2>
+    <p>There are two commands to comment or uncomment all selected lines. They can be accessed through the menu or the context menu.</p> 
+    <ul>
+        <li>Menu: <strong>Edit &gt; Comment</strong> and <strong>Edit &gt; Uncomment</strong></li>
+        <li>Context menu: <strong>Source &gt; Comment</strong> and <strong>Source &gt; Uncomment</strong></li>
+    </ul>
+    
+    <h2>Export functions</h2>
+    <p>One can export the editor's content to a XML, HTML, LaTeX and/or PDF file. There are two different ways to do this:</p>
+    <table cellspacing="10px">
+    <tr>
+      <td valign="top"><nobr><strong>File &gt; Export as...&nbsp;</strong></nobr></td>
+      <td>Opens a "Save as" Dialog where you specify the filename. The file extension defines the output format to use. All other options are taken from the export preferences.</td>
+    </tr>
+    <tr>
+      <td valign="top"><strong>File &gt; Export</strong></td>
+      <td>This opens a Dialog with some options, e.g. the output formats, the file's title, ... <br>Some more options are taken from the export preferences. This command creates all specified output files. The filename (without extension) is taken from the matlab file. Each export creates a hidden file in the directory of the source file where the data from the export dialog is stored in. If one exports the same file again, this data will be loaded.</td>
+    </tr>
+    </table>
+    
+
+</body>
+</html>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<comment></comment>
+<entry key="CONFIGFILEDIR">./config/</entry>
+<entry key="OUTPUTDIR">./xml/test/</entry>
+<entry key="SCHEMAFILE">schema.xsd</entry>
+<entry key="OUTPUT_LINENUMBERS">true</entry>
+<entry key="XSLT_HTML_FILE">CONFDIR/html.xsl</entry>
+<entry key="XSLT_HTML_L_FILE">CONFDIR/html_lines.xsl</entry>
+<entry key="XSLT_LATEX_FILE">CONFDIR/latex.xsl</entry>
+<entry key="XSLT_LATEX_L_FILE">CONFDIR/latex_lines.xsl</entry>
+<entry key="a"></entry>
+</properties>

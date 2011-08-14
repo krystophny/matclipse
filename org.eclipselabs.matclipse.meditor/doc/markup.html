@@ -1,0 +1,60 @@
+<html>
+<head>
+   <title>Meditor</title>
+</head>
+<body>
+
+    <h1>The markup langugage</h1>
+    <p>The export functions don't provide their full potential until markup text is used. Markup text is included as matlab comment, but inside the comment a special syntax (based on Mediawiki) is used to declare a markup text. Meditor (and all other editors) displays such sections as standard matlab comment, but in exported files markup text represents headings, links, bold text, ...</p>
+    <p>Matlab code is displayed in highlighted boxes. Each markup content breaks into such a box and occures like ordinary text. So it's also possible to write a document that consists mostly of normal text and some matlab code.</p>
+    
+    <p>This is a list of all implemented markup definitions.</p> 
+    <table cellspacing="10px" border="1">
+    <tr>
+      <td valign="top" rowspan="2"><strong>Element</strong></td>
+      <td valign="top"><strong>Syntax</strong></td>
+    </tr>
+    <tr><td><strong>Comments</strong></td></tr>
+    <tr>
+      <td valign="top">Headings</td>
+      <td valign="top"><tt>%==heading1==</tt><br><tt>%===heading2===</tt><br><tt>%====heading3====</tt></td>
+    </tr>
+    <tr>
+      <td valign="top" rowspan="2">Markup text</td>
+      <td valign="top"><tt>%% text</tt></td>
+    </tr>
+    <tr><td>Creates standard text in proportional typeface.</td></tr>
+    <tr>
+      <td valign="top">Truetype text</td>
+      <td valign="top"><tt>%% text &lt;tt&gt;variable&lt;/tt&gt; and text again</tt></td>
+    </tr>
+    <tr>
+      <td valign="top">Link</td>
+      <td valign="top"><tt>%% text [http://something.somedomain]</tt> and more text</td>
+    </tr>
+    <tr>
+      <td valign="top" rowspan="2">Equation</td>
+      <td valign="top"><tt>%% $$ this = formula $$</tt></td>
+    </tr>
+    <tr><td>The equation will be printed centered in its own line without a serial number.</td></tr>
+    <tr>
+      <td valign="top"><nobr>Unnumbered list</nobr></td>
+      <td valign="top"><tt>%* first entry</tt><br><tt>%* next entry</tt></td>
+    </tr>
+    <tr>
+      <td valign="top" rowspan="2">Numbered list</td>
+      <td valign="top"><tt>%# first entry</tt><br><tt>%# next entry</tt></td>
+    </tr>
+    <tr><td>It's not possible to interleave lists (ordered and unordered).</td></tr>
+    <tr>
+      <td valign="top" rowspan="2">LaTeX command</td>
+      <td valign="top"><tt>%\command</tt></td>
+    </tr>
+    <tr><td>These commands are only interpreted when exporting to LaTeX or PDF. It's possible to use every LaTeX command, so the author is responsible for seeing that they are applied in a reasonable way. One has also to keep in mind that the whole line will be seen as LaTeX command. </td></tr>
+    </table> 
+    
+    
+    
+
+</body>
+</html>

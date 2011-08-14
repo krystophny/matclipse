@@ -1,0 +1,152 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	elementFormDefault="qualified">
+
+	<xs:element name="matlab_file">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="filename" type="xs:string" />
+				<xs:choice>
+					<xs:element name="author"/>
+					<xs:element name="author" type="authorDescription" minOccurs="1" 
+						maxOccurs="1" />						
+				</xs:choice>
+	
+	<xs:element name="file" />
+				<xs:choice>
+					<xs:element name="function_list" type="functionListItems"/>
+					<xs:element name="variable_list" type="variableListItems"/>
+					<xs:sequence>
+						<xs:element name="formatted_content" type="formatted_contentElements"
+							maxOccurs="1" />						
+						<xs:element name="source" type="xs:string" maxOccurs="1" />
+					</xs:sequence>
+				</xs:choice>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:complexType name="authorDescription">
+		<xs:sequence>
+			<xs:element name="name" type="xs:string" />
+			<xs:element name="email" type="xs:string" />
+			<xs:element name="homepage" type="xs:anyURI" />
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="functionListItems">
+		<xs:sequence>
+			<xs:element name="function" type="xs:string"
+				maxOccurs="unbounded" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="variableListItems">
+		<xs:sequence>
+			<xs:element name="variable" type="xs:string"
+				maxOccurs="unbounded" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="formatted_contentElements">
+		<xs:sequence maxOccurs="unbounded">
+		<xs:choice>
+			<xs:element name="markuptext" type="markupElements"
+				maxOccurs="unbounded" />
+			<xs:element name="partitioning" type="partitioningElements" maxOccurs="unbounded"/>
+			</xs:choice>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="partitioningElements">
+		<xs:sequence>
+			<xs:choice maxOccurs="unbounded">
+				<xs:element name="line" />
+				<xs:element name="line" maxOccurs="unbounded"
+					type="lineElements" />
+			</xs:choice>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="lineElements">
+		<xs:sequence>
+			<xs:element name="partition" type="partitionElements" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="linenumber" type="xs:integer" />
+	</xs:complexType>
+
+	<xs:complexType name="partitionElements">
+		<xs:simpleContent>
+			<xs:extension base="xs:string">
+				<xs:attribute name="type" type="xs:string" />
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+
+	<xs:complexType name="markupElements">
+		<xs:sequence maxOccurs="unbounded">
+			<xs:choice>
+				<xs:element name="header1" type="xs:string"
+					minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element name="header2" type="xs:string"
+					minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element name="header3" type="xs:string"
+					minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element name="latex_cmd" type="xs:string"
+					minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element name="truetype" type="xs:string"
+					minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element name="link" type="xs:anyURI" minOccurs="0"
+					maxOccurs="unbounded"/>
+				<xs:element name="text" type="textElements" minOccurs="0"
+					maxOccurs="unbounded"/>
+				<xs:element name="list" type="listItems" minOccurs="0"
+					maxOccurs="unbounded">
+				</xs:element>
+				<xs:element name="numberedlist" type="numberedlistItems" minOccurs="0"
+					maxOccurs="unbounded"/>
+				<xs:element name="markupnewline" />
+			</xs:choice>
+		</xs:sequence>
+		
+	</xs:complexType>
+	
+			<xs:complexType name="textElements" mixed="true">
+						<xs:sequence maxOccurs="unbounded">
+							<xs:choice>
+								<xs:element name="link" type="xs:anyURI"
+									minOccurs="0" maxOccurs="unbounded"/>
+								<xs:element name="truetype"
+									type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+								<xs:element name="cequation" type="cequationItems"
+									minOccurs="0" maxOccurs="unbounded">
+									
+								</xs:element>
+							</xs:choice>
+						</xs:sequence>
+					</xs:complexType>
+					
+			<xs:complexType name="cequationItems">
+				<xs:simpleContent>
+					<xs:extension base="xs:string">
+						<xs:attribute name="eqnum" type="xs:string" />
+					</xs:extension>
+				</xs:simpleContent>
+			</xs:complexType>
+			
+			<xs:complexType name="listItems">
+						<xs:sequence minOccurs="1" maxOccurs="unbounded">
+							<xs:element name="listitem" minOccurs="1"
+								maxOccurs="unbounded" />
+						</xs:sequence>
+					</xs:complexType>
+					
+			<xs:complexType name="numberedlistItems">
+				<xs:sequence minOccurs="1" maxOccurs="unbounded">
+					<xs:element name="numberedlistitem" minOccurs="1"
+						maxOccurs="unbounded" />
+				</xs:sequence>
+			</xs:complexType>
+
+</xs:schema>
+

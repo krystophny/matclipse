@@ -1,0 +1,10 @@
+<toc label="Matlab editor documentation">
+    <topic label="General" href="doc/general.html">
+    </topic>
+    <topic label="Using Meditor" href="doc/using.html">
+    </topic>
+    <topic label="The markup langugage" href="doc/markup.html">
+    </topic>
+    <topic label="Configuration" href="doc/configuration.html">
+    </topic>
+</toc>

@@ -1,0 +1,168 @@
+\usepackage[german,english]{babel}
+\usepackage[latin1]{inputenc}
+\usepackage{palatino}
+\usepackage{verbatim}
+\usepackage{typearea}
+\usepackage{graphicx}
+\usepackage[usenames]{color}
+\usepackage{ifthen}
+\usepackage{longtable} 
+\usepackage{makeidx} 
+\usepackage{float}
+\usepackage{alltt}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[colorlinks,breaklinks,backref,pdfstartview=FitH]{hyperref}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+\usepackage[top=5mm,left=5mm,right=5mm,bottom=5mm]{geometry}
+\usepackage{xspace}
+
+\pagestyle{empty} 
+
+\selectlanguage{german}
+
+\hypersetup{
+  pdftitle={Applikationssoftware und Programmierung},
+  pdfauthor={Winfried Kernbichler},
+  pdfsubject={MLTutor},
+  pdfkeywords={Matlab,MLTutor}
+  baseurl={http://www.itp.tu-graz.ac.at/},
+  urlcolor={blue}
+  %filebordercolor={1,1,1},
+  %filecolor={0,0,1},
+  %linkbordercolor={0 0 0},
+  %linkcolor={1,0,0},
+}
+
+\hypersetup{
+  bookmarks=false,
+  bookmarksopen=false
+}
+
+% Umbruch bei {\tt }
+\newcommand{\origttfamily}{}% sollte noch nicht definiert sein!
+\let\origttfamily=\ttfamily % alte Definition von \ttfamily sichern
+\renewcommand{\ttfamily}{\origttfamily \hyphenchar\font=`\-}
+
+
+\newcommand{\capbsp}[1]{{\bf{\Large{#1}}}\\[0.5em]}
+\newcommand{\capa}[1]{\vspace*{1em}{\Large{#1}}\\[0.5em]}
+\newcommand{\capb}[1]{\vspace*{1em}{\large{#1}}\\[0.5em]}
+\newcommand{\ein}{\vspace{1em}\underline{Einführung:}\\[0.5em]}
+\newcommand{\err}{\vspace{1em}\hrulefill\\[1em]\underline{Fehlermeldungen:}\\[0.5em]}
+\newcommand{\war}{\vspace{1em}\hrulefill\\[1em]\underline{Warnungen:}\\[0.5em]}
+\newcommand{\default}{\vspace{1em}\hrulefill\\[1em]\underline{Defaultwerte:}\\[0.5em]}
+\newcommand{\graph}{\vspace{1em}\hrulefill\\[1em]\underline{Graphische Ausgabe:}\\[0.5em]}
+\newcommand{\bsp}{\vspace{1em}\hrulefill\\[1em]\underline{Anschauungsbeispiel:}\\[0.5em]}
+\newcommand{\zus}{\vspace{1em}\hrulefill\\[1em]\underline{Zusammenfassung:}\\[0.5em]}
+\newcommand{\hw}{\vspace{1em}\underline{Hinweis:}\\[0.5em]}
+
+\newcommand{\geg}{Gegeben: }
+\newcommand{\ges}{Gesucht: }
+
+% Programs
+\newcommand{\matlab}{{\sc Matlab}}
+\newcommand{\simulink}{{\sc Simulink}}
+\newcommand{\maple}{{\sc Maple}}
+\newcommand{\mathematica}{{\sc Mathematica}}
+\newcommand{\fortran}{{\sc Fortran}}
+\newcommand{\clang}{{\sc C}}
+\newcommand{\cpp}{{\sc C++}}
+\newcommand{\python}{{\sc Python}}
+\newcommand{\netscape}{{\sc Netscape}}
+\newcommand{\mozilla}{{\sc Mozilla}}
+\newcommand{\acroread}{{\sc Acrobat Reader}}
+\newcommand{\emacs}{{\sc Emacs}}
+\newcommand{\windows}{{\sc MS Windows}}
+\newcommand{\linux}{{\sc Linux}}
+\newcommand{\LaTex}{{\sc LaTex}}
+
+% Colors
+\definecolor{wheat}{rgb}{1,1,0.90}
+\definecolor{wheat1}{rgb}{1,0.94,0.92}
+\definecolor{wheat2}{rgb}{1,0.90,0.88}
+\definecolor{light}{gray}{0.95}
+\definecolor{heavy}{gray}{0.55}
+\newcommand{\red}[1]{\textcolor{red}{#1}}
+\newcommand{\black}[1]{\textcolor{black}{#1}}
+\newcommand{\blue}[1]{\textcolor{blue}{#1}}
+\newcommand{\green}[1]{\textcolor{green}{#1}}
+
+% Boxes
+\newcommand{\graybox}[1]{\fcolorbox{heavy}{light}
+  {\parbox{0.97\textwidth}{#1}}}
+\newcommand{\formbox}[1]{\fcolorbox{heavy}{wheat2}
+  {\parbox{0.97\textwidth}{#1}}}
+\newcommand{\formhead}[1]{\begin{center}\blue{#1}\end{center}}
+
+% Link
+
+\newcommand{\itplink}{http://itp.tugraz.at}
+\newcommand{\wikilink}{\itplink/wiki/index.php}
+\newcommand{\mltutorhintlink}{\itplink/wiki/index.php/MLTutor_-_Hints}
+
+\newcommand{\matlinkhelp}{http://itp.tugraz.at/matlab}
+%\newcommand{\docsource}{http://itp.tugraz.at/LV/kernbich/AppSoft-1/appdata}
+\newcommand{\matref}[2]{\href{\matlinkhelp/techdoc/ref/#2.html}{\tt #1}}
+\newcommand{\matrefe}[1]{\matref{#1}{#1}}
+
+\newcommand{\chaptersource}{http://itp.tugraz.at/LV/kernbich/AppSoft-1/Kapitel/}
+\newcommand{\skriptumsource}{http://itp.tugraz.at/LV/kernbich/AppSoft-1/}
+%\newcommand{\chaptername}{appsoft1-kapitel-}
+\newcommand{\skriptumname}{appsoft1.pdf}
+
+\newcommand{\appsoftsource}{\skriptumsource}
+
+
+\newcommand{\appsoftkapitel}[1]{ 
+	\href{http://itp.tugraz.at/LV/kernbich/AppSoft-1/Kapitel/appsoft1-kapitel-#1.pdf}{Kapitel #1}
+	}
+\newcommand{\appsoftskriptum}{ 
+	\href{\skriptumsource\skriptumname}{Skriptum}
+	}
+
+\newcommand{\matlabpublishsource}{\appsoftsource/MatlabPublish/}
+\newcommand{\matlabpublish}[2]{
+    \href{\matlabpublishsource/#1.html}{#2}
+    }
+
+\newcommand{\mltutorhint}[2]{
+    {\catcode`\_=11\href{\mltutorhintlink\##1}{#2}}
+    }
+
+
+\newcommand{\MatlabLearning}{{\catcode`\_=11\href{\matlinkhelp/techdoc/learn_matlab/learn_matlab.html}{Learning Matlab}}\xspace}
+\newcommand{\MatlabReference}{{\catcode`\_=11\href{\matlinkhelp/techdoc/ref/ref.html}{Reference}}\xspace}
+\newcommand{\MatlabMathematics}{{\catcode`\_=11\href{\matlinkhelp/techdoc/math/math.html}{Mathematics}}\xspace}
+\newcommand{\MatlabCreatingPlots}{{\catcode`\_=11\href{\matlinkhelp/techdoc/creating_plots/creating_plots.html}{Creating Plots}}\xspace}
+\newcommand{\MatlabPrograming}{{\catcode`\_=11\href{\matlinkhelp/techdoc/matlab_prog/matlab_prog.html}{Matlab Programing}}\xspace}
+\newcommand{\MatlabDataAnalysis}{{\catcode`\_=11\href{\matlinkhelp/techdoc/data_analysis/data_analysis.html}{Data Analysis}}\xspace}
+\newcommand{\MatlabEnvironment}{{\catcode`\_=11\href{\matlinkhelp/techdoc/matlab_env/matlab_env.html}{Matlab Environmment}}\xspace}
+\newcommand{\MatlabVisualize}{{\catcode`\_=11\href{\matlinkhelp/techdoc/visualize/visualize.html}{Visualize}}\xspace}
+\newcommand{\MatlabCreatingGUIs}{{\catcode`\_=11\href{\matlinkhelp/techdoc/creating_guis/creating_guis.html}{Creating GUIs}}\xspace}
+\newcommand{\MatlabExternalInterfacesReference}{{\catcode`\_=11\href{\matlinkhelp/techdoc/apiref/apiref.html}{External Interfaces Reference}}\xspace}
+\newcommand{\MatlabExternalInterfaces}{{\catcode`\_=11\href{\matlinkhelp/techdoc/matlab_external/}{External Interfaces}}\xspace}
+%\newcommand{\Matlab}{{\catcode`\_=11\href{\matlinkhelp}{}}}
+
+\newcommand{\MatlabReferenceFunctionsCategoricalList}{{\catcode`\_=11\href{\matlinkhelp/techdoc/ref/func_by_.html}{Functions Categorial List}}\xspace}
+\newcommand{\MatlabReferenceMathematics}{{\catcode`\_=11\href{\matlinkhelp/techdoc/ref/func_by9.html}{Mathematics}}\xspace}
+\newcommand{\MatlabReferenceMathematicsArraysAndMatrices}{{\catcode`\_=11\href{\matlinkhelp/techdoc/ref/func_b10.html}{Arrays and Matrices}}\xspace}
+\newcommand{\MatlabReferenceMathematicsLinearAlgebra}{{\catcode`\_=11\href{\matlinkhelp/techdoc/ref/func_b11.html}{Linear Algebra}}\xspace}
+\newcommand{\MatlabReferenceMathematicsElementaryMath}{{\catcode`\_=11\href{\matlinkhelp/techdoc/ref/func_b12.html}{Elementary Math}}\xspace}
+\newcommand{\MatlabReferenceMathematicsPolynomials}{{\catcode`\_=11\href{\matlinkhelp/techdoc/ref/func_b13.html}{Polynomials}}\xspace}
+\newcommand{\MatlabReferenceMathematicsInterporlationAndComputationalGeometry}{{\catcode`\_=11\href{\matlinkhelp/techdoc/ref/func_b14.html}{Interpolation and Computational Geometry}}\xspace}
+\newcommand{\MatlabReferenceMathematicsCoordinateSystemConversion}{{\catcode`\_=11\href{\matlinkhelp/techdoc/ref/func_b15.html}{Coordinate System Conversion}}\xspace}
+\newcommand{\MatlabReferenceMathematicsNonlinearNumericalMethods}{{\catcode`\_=11\href{\matlinkhelp/techdoc/ref/func_b16.html}{Nonlinear Numerical Mmethods}}\xspace}
+\newcommand{\MatlabReferenceMathematicsSpecializedMath}{{\catcode`\_=11\href{\matlinkhelp/techdoc/ref/func_b17.html}{Specialized Math}}\xspace}
+\newcommand{\MatlabReferenceMathematicsSparseMatrices}{{\catcode`\_=11\href{\matlinkhelp/techdoc/ref/func_b18.html}{Sparse Matrices}}\xspace}
+\newcommand{\MatlabReferenceMathematicsMathConstants}{{\catcode`\_=11\href{\matlinkhelp/techdoc/ref/func_b19.html}{Mathematical Constants}}\xspace}
+%\newcommand{\MatlabReference}{{\catcode`\_=11\href{\matlinkhelp/techdoc/ref/.html}{}}}
+
+
+% From Ingrid Ziegler
+\newcommand{\ii}{\textrm{i}}
+\newcommand{\define}{\stackrel{\textrm{\tiny def}}{=}}
+\newcommand{\field}[1]{\mathbb{#1}}
+\newcommand{\R}{\field{R}}
+\newcommand{\corrs}{\stackrel{\textrm{\tiny $\wedge$}}{=}}
+
