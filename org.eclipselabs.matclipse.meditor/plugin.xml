@@ -6,15 +6,15 @@
        <editor
            name="Matlab Editor"
            extensions="m"
-           icon="icons/mltutor_file.png"
+           icon="icons/matclipse_file.png"
            contributorClass="org.eclipse.ui.texteditor.BasicTextEditorActionContributor"
            class="org.eclipselabs.matclipse.meditor.editors.MatlabEditor"
            id="org.eclipselabs.matclipse.meditor.editors.MatlabEditor">
        </editor>
        <editor
-           name="MLTutor PDF Editor"
+           name="Matclipse PDF Editor"
            extensions=""
-           icon="icons/mltutor_file.png"
+           icon="icons/matclipse_file.png"
            class="org.eclipselabs.matclipse.meditor.editors.PdfEditor"
            id="org.eclipselabs.matclipse.meditor.editors.PdfEditor">
        </editor>

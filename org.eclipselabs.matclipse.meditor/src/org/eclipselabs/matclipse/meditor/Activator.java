@@ -191,7 +191,7 @@ public class Activator extends AbstractUIPlugin implements Preferences.IProperty
                                         "Plugin ID: " + symbolicName, null));
                     }
                     ErrorDialog.openError(
-                            shell, "Matlab editor error", "Error logged from MLTutor", status);
+                            shell, "Matlab editor error", "Error logged from Matclipse", status);
                 }
             }
         });
@@ -215,7 +215,7 @@ public class Activator extends AbstractUIPlugin implements Preferences.IProperty
                     Status status = new Status(
                         IStatus.WARNING, Activator.getPluginID(), 0, message, warning);
                     ErrorDialog.openError(
-                        shell, "Matlab editor warning", "Warning from MLTutor:", status);
+                        shell, "Matlab editor warning", "Warning from Matclipse:", status);
                 }
             }
         });
