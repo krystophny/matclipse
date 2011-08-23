@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Util Plug-in
+Bundle-SymbolicName: org.eclipselabs.matclipse.util
+Bundle-Version: 0.5.0.qualifier
+Bundle-Activator: org.eclipselabs.matclipse.util.MatclipseUtilPlugin
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.jface,
+ org.eclipse.ui,
+ org.eclipse.jface.text,
+ org.eclipse.ui.workbench.texteditor,
+ org.eclipse.core.resources
+Bundle-ActivationPolicy: lazy
+Export-Package: org.eclipselabs.matclipse.util
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-ClassPath: .

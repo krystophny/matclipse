@@ -1,0 +1,649 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<plugin>
+   <extension-point id="org.eclipselabs.matclipse.mconsole.matlabInterpreter" name="MatlabInterpreter" schema="schema/org.eclipselabs.matclipse.mconsole.matlabinterpreter.exsd"/>
+    
+    <extension point="org.eclipse.ui.perspectives">
+        <perspective
+         class="org.eclipselabs.matclipse.mconsole.internal.ui.perspectives.MatlabWorkbench"
+         icon="icons/matlab_workbench_perspective.gif"
+         id="org.eclipselabs.matclipse.mconsole.perspectives.MatlabWorkbench"
+         name="Matlab Workbench">
+        </perspective>
+    </extension>
+    <extension
+     point="org.eclipse.ui.newWizards">
+        <category
+         name="Matlab"
+         id="org.eclipselabs.matclipse.mconsole">
+        </category>
+        <wizard
+         name="Matlab File"
+         icon="icons/matlab_file_wizard.gif"
+         finalPerspective="org.eclipselabs.matclipse.mconsole.perspectives.MatlabWorkbench"
+         category="org.eclipselabs.matclipse.mconsole"
+         class="org.eclipselabs.matclipse.mconsole.internal.ui.wizards.NewMatlabFileWizard"
+         id="org.eclipselabs.matclipse.mconsole.wizards.NewMatlabFileWizard"
+         preferredPerspectives="org.eclipselabs.matclipse.mconsole.perspectives.MatlabWorkbench">
+            <description>
+                "New Matlab File"
+            </description>
+        </wizard>
+        
+        <wizard
+         category="org.eclipselabs.matclipse.mconsole"
+         class="org.eclipselabs.matclipse.mconsole.internal.ui.wizards.NewMatlabProjectWizard"
+         finalPerspective="org.eclipselabs.matclipse.mconsole.perspectives.MatlabWorkbench"
+         icon="icons/matlab_project_wizard.gif"
+         id="org.eclipselabs.matclipse.mconsole.wizards.NewMatlabProjectWizard"
+         preferredPerspectives="org.eclipselabs.matclipse.mconsole.perspectives.MatlabWorkbench"
+         name="Matlab Project"
+         project="true">
+            <description>
+                "New Matlab Project"
+            </description>
+        </wizard>
+    </extension>
+    
+    
+    
+    <extension point="org.eclipse.ui.popupMenus">
+        
+        
+        <viewerContribution
+         targetID="org.eclipselabs.matclipse.meditor.editors.MatlabEditor.EditorContext"
+         id="org.eclipselabs.matclipse.mconsole.actions">
+            <action
+             label="Evaluate Selection in Matlab.."
+             icon="/icons/snippets_view.gif"
+             class="org.eclipselabs.matclipse.mconsole.internal.ui.actions.EvalInMatlabConsoleAction"
+             menubarPath="group.edit"
+             id="org.eclipselabs.matclipse.mconsole.actions.EvalInMatlabConsoleAction">
+            </action>
+        </viewerContribution>
+        
+        
+        
+        <objectContribution
+         objectClass="org.eclipse.core.resources.IFile" adaptable="true"
+         nameFilter="*.m" id="org.eclipselabs.matclipse.mconsole.mfileaction">
+            <action label="Save and run in Matlab.."
+             icon="icons/matlab_script_action.gif" tooltip="Run Matlab Script"
+             class="org.eclipselabs.matclipse.mconsole.internal.ui.actions.MatlabScriptAction"
+             menubarPath="group.edit"
+             enablesFor="1"
+             id="org.eclipselabs.matclipse.mconsole.actions.MatlabScriptAction">
+            </action>
+            
+            <action
+             class="org.eclipselabs.matclipse.mconsole.internal.ui.actions.ChangeMatlabDirectoryAction"
+             icon="icons/matlab_script_action.gif"
+             id="org.eclipselabs.matclipse.mconsole.actions.ChangeMatlabDirectoryAction"
+             label="Change Matlab Directory"
+             menubarPath="group.edit"
+             style="push"
+             tooltip="Change Matlab Directory"/>
+        </objectContribution>
+        
+        
+    </extension>
+    <extension point="org.eclipse.ui.views">
+        <category name="Matlab" id="org.eclipselabs.matclipse.mconsole">
+        </category>
+        <view category="org.eclipselabs.matclipse.mconsole"
+         class="org.eclipselabs.matclipse.mconsole.views.MatlabConsoleView"
+         icon="icons/matlab_console_view.gif"
+         id="org.eclipselabs.matclipse.mconsole.views.MatlabConsoleView"
+         name="Matlab Console"/>
+        <view category="org.eclipselabs.matclipse.mconsole"
+        class="org.eclipselabs.matclipse.mconsole.views.MatlabWorkspaceView"
+        icon="icons/matlab_workspace_view.gif"
+        id="org.eclipselabs.matclipse.mconsole.views.MatlabWorkspaceView"
+        name="Matlab Workspace" />
+        <view category="org.eclipselabs.matclipse.mconsole"
+         class="org.eclipselabs.matclipse.mconsole.views.CommandHistoryView"
+         icon="icons/history_view.gif"
+         id="org.eclipselabs.matclipse.mconsole.views.CommandHistoryView"
+         name="Command History"/>
+        <view category="org.eclipselabs.matclipse.mconsole"
+         class="org.eclipselabs.matclipse.mconsole.views.MatlabConsoleDebugView"
+         icon="icons/debug_view.gif"
+         id="org.eclipselabs.matclipse.mconsole.views.MatlabConsoleDebugView"
+         name="Matlab Console Debug View">
+        </view>
+        
+    </extension>
+    <extension point="org.eclipse.ui.themes">
+        <themeElementCategory
+         id="org.eclipselabs.matclipse.mconsole.matlabconsole"
+         label="Matlab Console">
+            <description>
+                Color and Size of the Matlab Console
+            </description>
+        </themeElementCategory>
+        <themeElementCategory
+         id="org.eclipselabs.matclipse.mconsole.matlabcommandhistory"
+         label="Matlab Command History">
+            <description>
+                Color and Size of the Command History View
+            </description>
+        </themeElementCategory>
+        <themeElementCategory
+         id="org.eclipselabs.matclipse.mconsole.matlabworkspace"
+         label="Matlab Workspace">
+            <description>
+                Color and Size of the Matlab Workspace View
+            </description>
+        </themeElementCategory>
+        <themeElementCategory
+         id="org.eclipselabs.matclipse.mconsole.matlabprojectsview"
+         label="Matlab Projects View">
+            <description>
+                Color and Size of the Matlab Projects View
+            </description>
+        </themeElementCategory>
+        
+        
+        <colorDefinition
+         categoryId="org.eclipselabs.matclipse.mconsole.matlabcommandhistory"
+         id="org.eclipselabs.matclipse.mconsole.color.commandhistorybackground"
+         label="Command History Background Color" value="COLOR_WHITE">
+            <description>
+                Command History Background Color
+            </description>
+        </colorDefinition>
+        
+        <colorDefinition
+         categoryId="org.eclipselabs.matclipse.mconsole.matlabcommandhistory"
+         id="org.eclipselabs.matclipse.mconsole.color.commandhistoryforegorund"
+         label="Command History Foreground Color" value="COLOR_BLACK">
+            <description>
+                Command History Background Color
+            </description>
+        </colorDefinition>
+        
+        <colorDefinition
+         categoryId="org.eclipselabs.matclipse.mconsole.matlabcommandhistory"
+         id="org.eclipselabs.matclipse.mconsole.color.commandhistorydatecolor"
+         label="Command History Date Color" value="100,100,100">
+            <description>
+                Command History Date Color
+            </description>
+        </colorDefinition>
+        
+        <fontDefinition
+         categoryId="org.eclipselabs.matclipse.mconsole.matlabcommandhistory"
+         defaultsTo="org.eclipse.jface.dialogfont"
+         id="org.eclipselabs.matclipse.mconsole.font.commandhistoryfont"
+         label="Command History Font">
+            <description>
+                This font is used to display the Command History.
+            </description>
+        </fontDefinition>
+        
+        
+        <fontDefinition
+         categoryId="org.eclipselabs.matclipse.mconsole.matlabprojectsview"
+         defaultsTo="org.eclipse.jface.dialogfont"
+         id="org.eclipselabs.matclipse.mconsole.font.matlabprojectsview"
+         label="Matlab Projects View Font">
+            <description>
+                This font is used to display the Items of the Matlab Projects View
+            </description>
+        </fontDefinition>
+        
+        <colorDefinition
+         categoryId="org.eclipselabs.matclipse.mconsole.matlabconsole"
+         id="org.eclipselabs.matclipse.mconsole.color.consoledirchooser"
+         label="Directory Chooser Color if in workspace" value="COLOR_BLUE">
+            <description>
+                Directory Chooser Color if in workspace
+            </description>
+        </colorDefinition>
+        
+        <colorDefinition
+         categoryId="org.eclipselabs.matclipse.mconsole.matlabconsole"
+         id="org.eclipselabs.matclipse.mconsole.color.consolebackground"
+         label="Console Background Color" value="COLOR_WHITE">
+            <description>
+                Console Background Color
+            </description>
+        </colorDefinition>
+        
+        <colorDefinition
+         categoryId="org.eclipselabs.matclipse.mconsole.matlabworkspace"
+         id="org.eclipselabs.matclipse.mconsole.color.workspacebackground"
+         label="Workspace Background Color" value="COLOR_WHITE">
+            <description>
+                Workspace Background Color
+            </description>
+        </colorDefinition>
+        
+        
+        <colorDefinition
+         categoryId="org.eclipselabs.matclipse.mconsole.matlabconsole"
+         id="org.eclipselabs.matclipse.mconsole.color.text"
+         label="Console Text Color" value="COLOR_BLACK">
+            <description>
+                Console Text Color
+            </description>
+        </colorDefinition>
+        
+        <colorDefinition
+         categoryId="org.eclipselabs.matclipse.mconsole.matlabworkspace"
+         id="org.eclipselabs.matclipse.mconsole.color.workspacetext"
+         label="Workspace Text Color" value="COLOR_BLACK">
+            <description>
+                Workspace Text Color
+            </description>
+        </colorDefinition>
+        
+        <fontDefinition
+         categoryId="org.eclipselabs.matclipse.mconsole.matlabworkspace"
+         defaultsTo="org.eclipse.jface.textfont"
+         id="org.eclipselabs.matclipse.mconsole.font.workspacefont"
+         label="Workspace Font">
+            <description>
+                This font is used to display the Matlab Workspace
+                Output.
+            </description>
+        </fontDefinition>
+        
+        <fontDefinition
+         categoryId="org.eclipselabs.matclipse.mconsole.matlabworkspace"
+         defaultsTo="org.eclipse.jface.dialogfont"
+         id="org.eclipselabs.matclipse.mconsole.font.workspacetreefont"
+         label="Workspace Tree Font">
+            <description>
+                This font is used to display the Matlab Workspace Tree.
+            </description>
+        </fontDefinition>
+        
+        <colorDefinition
+         categoryId="org.eclipselabs.matclipse.mconsole.matlabconsole"
+         id="org.eclipselabs.matclipse.mconsole.color.input"
+         label="Console Input Color" value="COLOR_BLUE">
+            <description>
+                Console Input (>>) Color
+            </description>
+        </colorDefinition>
+        <colorDefinition
+         categoryId="org.eclipselabs.matclipse.mconsole.matlabconsole"
+         id="org.eclipselabs.matclipse.mconsole.color.error"
+         label="Console Error Color" value="COLOR_RED">
+            <description>
+                Console Error Color
+            </description>
+        </colorDefinition>
+        <fontDefinition
+         categoryId="org.eclipselabs.matclipse.mconsole.matlabconsole"
+         defaultsTo="org.eclipse.jface.textfont"
+         id="org.eclipselabs.matclipse.mconsole.font.consolefont"
+         label="Console Font">
+            <description>
+                This font is used to display the Matlab Console.
+            </description>
+        </fontDefinition>
+        <fontDefinition
+         categoryId="org.eclipselabs.matclipse.mconsole.matlabconsole"
+         defaultsTo="org.eclipse.jface.textfont"
+         id="org.eclipselabs.matclipse.mconsole.font.inputconsolefont"
+         label="Console Input Font">
+            <description>
+                This font is used to display the Matlab Console Input.
+            </description>
+        </fontDefinition>
+    </extension>
+    <extension point="org.eclipse.ui.preferencePages">
+        <page
+         class="org.eclipselabs.matclipse.mconsole.internal.ui.preferences.MatlabConsolePreferencePage"
+         id="org.eclipselabs.matclipse.mconsole.preferences.MatlabConsolePreferencePage"
+         name="Matlab Console">
+        </page>
+    </extension>
+    <extension point="org.eclipse.core.runtime.preferences">
+        <initializer
+         class="org.eclipselabs.matclipse.mconsole.internal.ui.preferences.PreferenceInitializer">
+        </initializer>
+    </extension>
+    <extension id="org.eclipselabs.matclipse.matlabBuilder" name="Matlab Builder"
+     point="org.eclipse.core.resources.builders">
+        <builder hasNature="false">
+            <run
+             class="org.eclipselabs.matclipse.mconsole.builder.MatlabBuilder"/>
+        </builder>
+    </extension>
+    <extension point="org.eclipse.ui.popupMenus">
+        <objectContribution adaptable="true"
+         id="org.eclipselabs.matclipse.contribution1" nameFilter="*"
+         objectClass="org.eclipse.core.resources.IProject">
+            <action
+             class="org.eclipselabs.matclipse.mconsole.internal.ui.actions.ToggleMatlabNatureAction"
+             enablesFor="+" icon="icons/matlab_togglenature_action.gif"
+             id="org.eclipselabs.matclipse.mconsole.actions.ToggleMatlabNatureAction"
+             label="Add/Remove Matlab Nature" menubarPath="additions"/>
+            <action
+             class="org.eclipselabs.matclipse.mconsole.internal.ui.actions.ChangeMatlabDirectoryAction"
+             icon="icons/matlab_script_action.gif"
+             id="org.eclipselabs.matclipse.mconsole.actions.ChangeMatlabDirectoryAction"
+             label="Change Matlab Directory"
+             menubarPath="group.edit"
+             style="push"
+             tooltip="Change Matlab Directory"/>
+        </objectContribution>
+        <objectContribution adaptable="true"
+         id="org.eclipselabs.matclipse.contribution2" nameFilter="*"
+         objectClass="org.eclipse.core.resources.IFolder">
+            <action
+             class="org.eclipselabs.matclipse.mconsole.internal.ui.actions.ChangeMatlabDirectoryAction"
+             icon="icons/matlab_script_action.gif"
+             id="org.eclipselabs.matclipse.mconsole.actions.ChangeMatlabDirectoryAction"
+             label="Change Matlab Directory to here"
+             menubarPath="group.edit"
+             style="push"
+             tooltip="Change Matlab Directory to here"/>
+        </objectContribution>
+        
+        
+    </extension>
+    <extension id="org.eclipselabs.matclipse.MatlabNature" name="Matlab Nature"
+     point="org.eclipse.core.resources.natures">
+        <runtime>
+            <run
+             class="org.eclipselabs.matclipse.mconsole.builder.MatlabNature"/>
+        </runtime>
+        <builder id="org.eclipselabs.matclipse.matlabBuilder"/>
+    </extension>
+    
+    <extension id="matlabProblem" name="Matlab Problem"
+     point="org.eclipse.core.resources.markers">
+        <super type="org.eclipse.core.resources.problemmarker"/>
+        <persistent value="true"/>
+    </extension>
+    
+    <extension point="org.eclipse.ui.ide.projectNatureImages">
+        <image id="org.eclipselabs.matlabnature.image"
+         natureId="org.eclipselabs.matclipse.MatlabNature"
+         icon="icons/matlab_project_ovr.gif">
+        </image>
+    </extension>
+    
+    <extension point="org.eclipse.ui.contexts">
+        <context
+         id="org.eclipselabs.matclipse.mconsole.matlabEditorScope"
+         name="Editing Matlab File Console Actions"
+         description="Editing Matlab File Console Actions"
+         parentId="org.eclipse.ui.textEditorScope"/>
+    </extension>
+    
+    <extension point="org.eclipse.ui.commands">
+        <command
+         name="Run in Matlab .."
+         description="Runs selected File in Matlab.."
+         categoryId="org.eclipselabs.matclipse.console.actions"
+         id="org.eclipselabs.matclipse.mconsole.actions.runinmatlabaction">
+        </command>
+        <category
+         name="Matlab actions"
+         description="Matlab actions"
+         id="org.eclipselabs.matclipse.console.actions">
+        </category>
+    </extension>
+    
+    
+    <extension
+     point="org.eclipse.ui.actionSets">
+        <actionSet
+         id="org.eclipselabs.matclipse.mconsole.actionSet"
+         label="Matlab Start Stop Action Set"
+         visible="false">
+            <menu
+             id="matlabMenu"
+             label="Matlab">
+                <separator name="matlabGroup"/>
+            </menu>
+            <action
+             class="org.eclipselabs.matclipse.mconsole.internal.ui.actions.MatlabPreferencesAction"
+             id="org.eclipselabs.matclipse.actions.StartMatlabAction"
+             label="Open Matlab Preferences"
+             menubarPath="matlabMenu/matlabGroup"
+             style="push"
+             tooltip="Open Matlab Preferences"/>
+            <action
+             class="org.eclipselabs.matclipse.mconsole.internal.ui.actions.MatlabDemoAction"
+             id="org.eclipselabs.matclipse.actions.StopMatlabAction"
+             label="Show Matlab Demos"
+             menubarPath="matlabMenu/matlabGroup"
+             style="push"
+             tooltip="Show Matlab Demos"/>
+            <action
+             class="org.eclipselabs.matclipse.mconsole.internal.ui.actions.OpenImportAction"
+             id="org.eclipselabs.matclipse.actions.OpenImportAction"
+             label="Open Import Dialog"
+             menubarPath="matlabMenu/matlabGroup"
+             style="push"
+             tooltip="Open Import Dialog"/>
+            
+            <action
+             class="org.eclipselabs.matclipse.mconsole.internal.ui.actions.RunBenchmarkAction"
+             id="org.eclipselabs.matclipse.actions.RunBenchmarkAction"
+             label="Run Matlab Benchmark"
+             menubarPath="matlabMenu/matlabGroup"
+             style="push"
+             tooltip="Run Matlab Benchmark"/>
+        </actionSet>
+    </extension>
+    
+    
+    <extension
+     point="org.eclipse.ui.perspectiveExtensions">
+        <perspectiveExtension
+         targetID="org.eclipselabs.matclipse.mconsole.perspectives.MatlabWorkbench">
+            <actionSet
+             id="org.eclipselabs.matclipse.mconsole.actionSet">
+            </actionSet>
+        </perspectiveExtension>
+    </extension>
+    
+    <!-- Conflicts
+    <extension point="org.eclipse.ui.bindings">
+        <key
+         sequence="F5"
+         commandId="org.eclipselabs.matclipse.mconsole.actions.runinmatlabaction"
+         contextId="org.eclipse.ui.contexts.window"
+         schemeId="org.eclipse.ui.defaultAcceleratorConfiguration">
+        </key>
+    </extension>
+    !-->
+    
+    
+    
+    
+    
+    <extension point="org.eclipse.ui.decorators">
+        <decorator
+         id="org.eclipselabs.matclipse.mconsole.decorators.MatlabDecorator"
+         label="Matlab Decorator"
+         state="true"
+         class="org.eclipselabs.matclipse.mconsole.decorators.MatlabDecorator"
+         lightweight="false">
+            <enablement>
+                <objectClass name="org.eclipse.core.resources.IResource"/>
+            </enablement>
+        </decorator>
+    </extension>
+    
+    <extension id="matlabError" name="Matlab Error"
+     point="org.eclipse.core.resources.markers">
+        <super type="org.eclipse.core.resources.problemmarker"/>
+        <persistent value="true"/>
+    </extension>
+    <extension
+     id="product"
+     point="org.eclipse.core.runtime.products">
+        <product
+         application="org.eclipse.ui.ide.workbench"
+         name="MatlabWorkbench">
+            <property
+             name="appName"
+             value="MatlabWorkbench">
+            </property>
+        </product>
+    </extension>
+    <extension
+     point="org.eclipse.help.toc">
+        <toc
+         file="toc.xml"
+         primary="true">
+        </toc>
+        <toc
+         file="tocconcepts.xml">
+        </toc>
+        <toc
+         file="tocgettingstarted.xml">
+        </toc>
+        <toc
+         file="tocreference.xml">
+        </toc>
+        <toc
+         file="tocsamples.xml">
+        </toc>
+        <toc
+         file="toctasks.xml">
+        </toc>
+    </extension>
+    
+    <!-- Begin of common navigator -->
+    <extension
+     point="org.eclipse.ui.views">
+        <view
+         category="org.eclipselabs.matclipse.mconsole"
+         class="org.eclipse.ui.navigator.CommonNavigator"
+         icon="icons/matlab_projects_view.gif"
+         id="org.eclipselabs.matclipse.mconsole.views.MatlabProjectNavigator"
+         name="Matlab Workspace Navigator"/>
+    </extension>
+	
+    <extension
+     point="org.eclipse.ui.navigator.navigatorContent">        
+        <commonWizard
+         type="new"
+         wizardId="org.eclipselabs.matclipse.mconsole.wizards.NewMatlabFileWizard">
+            <enablement>
+            </enablement>
+        </commonWizard>
+        <commonWizard
+         type="new"
+         wizardId="org.eclipselabs.matclipse.mconsole.wizards.NewMatlabProjectWizard">
+            <enablement>
+            </enablement>
+        </commonWizard>
+        <commonFilter
+         id="org.eclipselabs.matclipse.mconsole.views.MatlabProjectNavigator.filters.hideNonMatlabProjects"
+         name="Hide non-Matlab Projects">
+            <filterExpression>
+                <not>
+                    <adapt type="org.eclipse.core.resources.IProject">
+                        <test
+                         property="org.eclipse.core.resources.projectNature"
+                         value="org.eclipselabs.matclipse.mconsole.MatlabNature"/>
+                    </adapt>
+                </not>
+            </filterExpression>
+        </commonFilter>
+    </extension>
+    
+    
+   <extension
+         point="org.eclipse.ui.navigator.viewer">
+       <viewer
+             viewerId="org.eclipselabs.matclipse.mconsole.views.MatlabProjectNavigator">
+          <popupMenu
+                allowsPlatformContributions="true"
+                id="org.eclipselabs.matclipse.mconsole.views.MatlabProjectNavigator#PopupMenu">  
+             <insertionPoint name="group.new"/>
+             <insertionPoint
+                   name="group.open"
+                   separator="true"/>
+             <insertionPoint name="group.openWith"/>   
+             <insertionPoint name="group.edit"
+                   separator="true"/>   
+             <insertionPoint name="group.reorganize" />         
+             <insertionPoint
+                   name="group.port"
+                   separator="true"/>     
+             <insertionPoint
+                   name="group.build"
+                   separator="true"/> 
+             <insertionPoint
+                   name="group.generate"
+                   separator="true"/> 
+             <insertionPoint
+                   name="group.search"
+                   separator="true"/>              
+             <insertionPoint
+                   name="additions"
+                   separator="true"/>              
+             <insertionPoint
+                   name="group.properties"
+                   separator="true"/>
+             
+          </popupMenu>
+       </viewer>
+       <viewerContentBinding 
+             viewerId="org.eclipselabs.matclipse.mconsole.views.MatlabProjectNavigator">
+          <includes>
+       	      <contentExtension pattern="org.eclipse.ui.navigator.resourceContent" />		       	      
+	          <contentExtension pattern="org.eclipse.ui.navigator.resources.filters.*"/>
+              <contentExtension pattern="org.eclipse.ui.navigator.resources.linkHelper"/>
+              <contentExtension pattern="org.eclipse.ui.navigator.resources.workingSets"/>
+          </includes>
+       </viewerContentBinding>
+       <viewerActionBinding
+            viewerId="org.eclipselabs.matclipse.mconsole.views.MatlabProjectNavigator">
+         <includes>
+             <actionExtension pattern="org.eclipse.ui.navigator.resources.*" />
+         </includes>
+       </viewerActionBinding>
+       <dragAssistant
+             class="org.eclipse.ui.navigator.resources.ResourceDragAdapterAssistant"
+             viewerId="org.eclipselabs.matclipse.mconsole.views.MatlabProjectNavigator"/>
+       
+   </extension>
+   
+   <!-- New -->
+ 	<extension
+          point="org.eclipse.ui.views.properties.tabbed.propertyContributor">
+       <propertyContributor
+             contributorId="org.eclipselabs.matclipse.mconsole.views.MatlabProjectNavigator"
+             labelProvider="org.eclipse.ui.internal.navigator.resources.workbench.TabbedPropertySheetTitleProvider">
+          <propertyCategory category="general"/>
+          <propertyCategory category="core"/>
+          <propertyCategory category="appearance"/>
+          <propertyCategory category="resource"/>
+          <propertyCategory category="advanced"/>
+       </propertyContributor>
+    </extension>
+	<extension
+          point="org.eclipse.ui.views.properties.tabbed.propertyTabs">
+       <propertyTabs contributorId="org.eclipselabs.matclipse.mconsole.views.MatlabProjectNavigator">
+          <propertyTab
+                label="%Resource"
+                category="resource"
+                id="CommonNavigator.tab.Resource"/>
+       </propertyTabs>
+    </extension>
+	<extension
+          point="org.eclipse.ui.views.properties.tabbed.propertySections">
+       <propertySections contributorId="org.eclipselabs.matclipse.mconsole.views.MatlabProjectNavigator">
+          <propertySection
+                class="org.eclipse.ui.views.properties.tabbed.AdvancedPropertySection"
+                id="CommonNavigator.section.Resource"
+                tab="CommonNavigator.tab.Resource">
+             <input type="java.lang.Object"/>
+          </propertySection>
+       </propertySections>
+    </extension>
+    <!-- End of common navigator !-->
+    
+</plugin>

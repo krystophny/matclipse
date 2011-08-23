@@ -1,0 +1,10 @@
+at.tugraz.itp.matclipse.mconsole
+at.tugraz.itp.matclipse.mconsole.builder
+at.tugraz.itp.matclipse.mconsole.decorators
+at.tugraz.itp.matclipse.mconsole.internal.ui.actions
+at.tugraz.itp.matclipse.mconsole.internal.ui.perspectives
+at.tugraz.itp.matclipse.mconsole.internal.ui.preferences
+at.tugraz.itp.matclipse.mconsole.internal.ui.wizards
+at.tugraz.itp.matclipse.mconsole.matlab
+at.tugraz.itp.matclipse.mconsole.matlab.impl
+at.tugraz.itp.matclipse.mconsole.views
