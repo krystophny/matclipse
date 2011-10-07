@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry excluding="*.txt" kind="src" path="src"/>
+	<classpathentry excluding="*.txt" kind="src" path="unittest"/>
+	<classpathentry excluding="*.txt" kind="src" path="samples"/>
+	<classpathentry kind="var" path="JRE_LIB" sourcepath="JRE_SRC"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/3"/>
+	<classpathentry kind="con" path="org.eclipse.pde.core.requiredPlugins"/>
+	<classpathentry kind="output" path="release/java"/>
+</classpath>

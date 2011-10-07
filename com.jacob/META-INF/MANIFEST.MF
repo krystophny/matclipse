@@ -1,0 +1,33 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: JACOB
+Bundle-SymbolicName: com.jacob
+Bundle-Version: 1.15.0.M4
+Export-Package: com.jacob.activeX,
+ com.jacob.com,
+ com.jacob.samples.JavaWebStart,
+ com.jacob.samples.MathProj,
+ com.jacob.samples.access,
+ com.jacob.samples.ado,
+ com.jacob.samples.ado.ms,
+ com.jacob.samples.applet,
+ com.jacob.samples.atl,
+ com.jacob.samples.atl.MultiFace,
+ com.jacob.samples.office,
+ com.jacob.samples.outlook,
+ com.jacob.samples.servlet,
+ com.jacob.samples.system,
+ com.jacob.samples.visio,
+ com.jacob.test,
+ com.jacob.test.errors,
+ com.jacob.test.events,
+ com.jacob.test.excel,
+ com.jacob.test.powerpoint,
+ com.jacob.test.safearray,
+ com.jacob.test.vbscript,
+ com.jacob.test.windowsmedia
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-NativeCode: /release/x86/jacob-1.15-M4-x86.dll; osname="win32"; osname="windows server 2008 r2"; processor=x86, 
+                   /release/x64/jacob-1.15-M4-x64.dll; osname="win32"; osname="windows server 2008 r2"; processor=x86-64
+Eclipse-PlatformFilter: (& (osgi.os=win32) (|(osgi.arch=x86)(osgi.arch=x86_64)))
