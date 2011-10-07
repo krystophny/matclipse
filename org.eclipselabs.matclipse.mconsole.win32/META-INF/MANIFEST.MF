@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: MConsole win32
+Bundle-SymbolicName: org.eclipselabs.matclipse.mconsole.win32;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ com.jacob;bundle-version="1.15.0",
+ org.eclipse.core.resources;bundle-version="3.6.0",
+ org.eclipselabs.matclipse.mconsole;bundle-version="0.5.0"
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Export-Package: org.eclipselabs.matclipse.mconsole.win32,
+ org.eclipselabs.matclipse.mconsole.win32.impl
+Eclipse-PlatformFilter: (& (osgi.os=win32) (|(osgi.arch=x86)(osgi.arch=x86_64)))
+Bundle-Activator: org.eclipselabs.matclipse.mconsole.win32.Activator

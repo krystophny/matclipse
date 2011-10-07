@@ -1,9 +1,9 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <!-- Schema file written by PDE -->
-<schema targetNamespace="at.tugraz.itp.matclipse.mconsole" xmlns="http://www.w3.org/2001/XMLSchema">
+<schema targetNamespace="org.eclipselabs.matclipse.mconsole" xmlns="http://www.w3.org/2001/XMLSchema">
 <annotation>
       <appInfo>
-         <meta.schema plugin="at.tugraz.itp.matclipse.mconsole" id="at.tugraz.itp.matclipse.mconsole.matlabInterpreter" name="MatlabInterpreter"/>
+         <meta.schema plugin="org.eclipselabs.matclipse.mconsole" id="org.eclipselabs.matclipse.mconsole.matlabInterpreter" name="MatlabInterpreter"/>
       </appInfo>
       <documentation>
          [Enter description of this extension point.]
@@ -55,7 +55,7 @@
                   
                </documentation>
                <appInfo>
-                  <meta.attribute kind="java" basedOn=":at.tugraz.itp.matclipse.mconsole.matlab.MatlabInterpreter"/>
+                  <meta.attribute kind="java" basedOn=":org.eclipselabs.matclipse.mconsole.matlab.MatlabInterpreter"/>
                </appInfo>
             </annotation>
          </attribute>
