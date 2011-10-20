@@ -2,11 +2,11 @@
 <?eclipse version="3.4"?>
 <plugin>
    <extension
-         id="at.tugraz.ipt.matclipse.mconsole.win32.comMatlabInterpreter"
+         id="at.tugraz.itp.matlipse.mconsole.win32.comMatlabInterpreter"
          name="Win32 COM MatlabInterpreter"
          point="org.eclipselabs.matclipse.mconsole.matlabInterpreter">
       <client
-            class="at.tugraz.itp.matlipse.mconsole.win32.impl.COMMatlabInterpreter"></client>
+            class="org.eclipselabs.matclipse.mconsole.win32.impl.COMMatlabInterpreter"></client>
    </extension>
 
 </plugin>
