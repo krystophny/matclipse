@@ -2,7 +2,7 @@
 <?eclipse version="3.4"?>
 <plugin>
    <extension
-         id="at.tugraz.itp.matlipse.mconsole.win32.comMatlabInterpreter"
+         id="org.eclipselabs.matlipse.mconsole.win32.comMatlabInterpreter"
          name="Win32 COM MatlabInterpreter"
          point="org.eclipselabs.matclipse.mconsole.matlabInterpreter">
       <client
