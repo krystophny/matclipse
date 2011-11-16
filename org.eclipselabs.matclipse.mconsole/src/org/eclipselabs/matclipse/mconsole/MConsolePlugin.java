@@ -149,8 +149,11 @@ public class MConsolePlugin extends AbstractUIPlugin {
 					IPreferenceConstants.P_MATLABINTERPRETER);
 			if (interpreter.equals("octave"))
 				matlab = new OctaveInterpreter();
-			else if (getSystem().contains("windows"))
+			else if (getSystem().contains("windows")) {
+				
 				loadInterpreterExtension();
+				System.out.println("WINDOWS");
+			}
 			else
 				matlab = new UnixMatlabInterpreter();
 
@@ -191,7 +194,8 @@ public class MConsolePlugin extends AbstractUIPlugin {
 				}
 			}
 		} catch (CoreException ex) {
-			System.out.println(ex.getMessage());
+			MatclipseUtilPlugin.getDefault().errorDialog(
+					"Problem starting Matlab", ex);
 		}
 	}
 
