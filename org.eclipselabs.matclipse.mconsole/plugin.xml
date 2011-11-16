@@ -482,11 +482,11 @@
      id="product"
      point="org.eclipse.core.runtime.products">
         <product
-         application="org.eclipse.ui.ide.workbench"
-         name="MatlabWorkbench">
+              application="org.eclipse.ui.ide.workbench"
+              name="Matclipse">
             <property
              name="appName"
-             value="MatlabWorkbench">
+             value="Matclipse">
             </property>
         </product>
     </extension>
