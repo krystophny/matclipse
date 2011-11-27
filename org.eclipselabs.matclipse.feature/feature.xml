@@ -16,6 +16,12 @@
       [Enter License Description here.]
    </license>
 
+   <includes
+         id="org.eclipselabs.matclipse.win32.feature"
+         version="0.0.0"
+         optional="true"
+         os="win32"/>
+
    <requires>
       <import plugin="org.eclipse.ui"/>
       <import plugin="org.eclipse.core.runtime"/>
