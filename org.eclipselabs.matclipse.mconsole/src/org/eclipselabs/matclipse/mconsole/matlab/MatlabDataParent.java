@@ -28,13 +28,19 @@ public class MatlabDataParent extends MatlabDataObject {
 	}
 
 	public void addChild(MatlabDataParent child) {
-		children.add(child);
-		child.setParent(this);
+		if(child != null)
+		{
+			children.add(child);
+			child.setParent(this);
+		}			
 	}
 
 	public void removeChild(MatlabDataParent child) {
-		children.remove(child);
-		child.setParent(null);
+		if(child != null)
+		{
+			children.remove(child);
+			child.setParent(null);
+		}
 	}
 
 	public MatlabDataParent[] getChildren() {
